@@ -1,0 +1,17 @@
+# Arquivo de variáveis de ambiente
+.env
+
+# CSVs processados / pasta de saída
+limpos/
+
+# Cache do Python
+__pycache__/
+*.pyc
+
+# Arquivos do sistema (Windows, macOS)
+Thumbs.db
+.DS_Store
+
+# ZIP original de dados
+cad_auditor.zip
+
