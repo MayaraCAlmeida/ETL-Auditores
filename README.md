@@ -50,7 +50,7 @@ python consultar_auditores.py   # confere os dados importados
 ├── teste_conexao.py
 ├── requirements.txt
 ├── .env                  # não versionado
-└── limpos/               # gerado pelo script, não versionado
+└── limpos/               
 ```
 
 ## Tabelas geradas
