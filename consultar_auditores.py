@@ -1,4 +1,5 @@
-from sqlalchemy import create_engine, text
+import pandas as pd
+from sqlalchemy import create_engine
 from dotenv import load_dotenv
 import os
 
@@ -14,10 +15,7 @@ engine = create_engine(
     f"postgresql+psycopg2://{usuario}:{senha}@{host}:{porta}/{banco}"
 )
 
-try:
-    with engine.connect() as conn:
-        versao = conn.execute(text("SELECT version();")).fetchone()[0]
-        print("Conexao OK")
-        print(versao)
-except Exception as e:
-    print(f"Erro: {e}")
+for tabela in ["cad_auditor_pf", "cad_auditor_pj"]:
+    df = pd.read_sql(f"SELECT * FROM {tabela} LIMIT 10", engine)
+    print(f"\n{tabela}:")
+    print(df.to_string(index=False))
